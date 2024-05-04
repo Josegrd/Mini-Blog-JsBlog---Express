@@ -1,0 +1,14 @@
+body{height: 100vh;}
+
+form {
+    width: 40%;
+}
+
+textarea{
+    width: 100%;
+}
+
+.profile{
+    border-radius: 50%;
+    width: 200px;
+}

@@ -1,0 +1,25 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="col-md-9 p-3 pb-0 ">
+  <div style=" height:75%">
+
+
+    <form class="mx-5 mb-0 mt-3" action="/edit/<%= index %>" method="POST">
+      <h1 class="h3 mb-3 fw-normal">Edit Your Blog👇</h1>
+
+      <div class="form-floating mb-3">
+        <input type="text" name="title" class="form-control" id="title" placeholder="title" value="<%= post.title %>">
+        <label for="floatingInput">Title</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <textarea id="content" name="content" placeholder="Let's Write Your Story"
+          class="p-2"><%= post.content %></textarea>
+      </div>
+
+      <button class="btn btn-primary w-100 py-2" type="submit">Save!</button>
+    </form>
+  </div>
+
+  <%- include("partials/footer.ejs") %>

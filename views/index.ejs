@@ -1,0 +1,31 @@
+<%- include("partials/header.ejs") %>
+
+
+<div class="col-md-9 p-3 pb-0 ">
+    <div style=" height:75%" class="p-3">
+        <h2 class="text-body-emphasis">Senandungs</h2>
+        <p>Read more Your blog here!</p>
+        <ul class="list-unstyled ps-0">
+            <% posts.forEach((post, index) => {%>
+            <li>
+                <a href="/post/<%= index %>" style="font-size:20px;text-decoration:none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-arrow-right-circle-fill m-2" viewBox="0 0 16 16">
+                        <path
+                            d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                    </svg>
+                    <%= post.title %></a>
+                <br>
+                <div style="display: flex;">
+                    <form action="/delete/<%= index %>" method="POST" style="width: 85px;">
+                        <button type="submit" class="btn btn-secondary ms-1 ">Delete</button>
+                    </form>
+
+                    <a href="/edit/<%= index %>"><button class="btn btn-info">Edit</button></a>
+                </div>
+            </li>
+            <br>
+            <% }); %>
+        </ul>
+    </div>
+    <%- include("partials/footer.ejs") %>
